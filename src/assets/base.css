@@ -82,6 +82,7 @@ del,
 dfn,
 em,
 img,
+input,
 ins,
 kbd,
 q,
@@ -139,7 +140,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -184,4 +184,8 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+input {
+  outline: none;
 }

@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import AllPageHeader from '@components/AllPageHeader.vue'
 import { ref, watch } from 'vue'
 
 const searchText = ref('')
@@ -10,74 +10,49 @@ watch(searchText, (val, oldval) => {
 </script>
 
 <template>
-  <header>
-    <h1>L'armateur</h1>
-    <div>
-      <!-- missing on change link -->
-      <input type="text" v-model="searchText" />
-    </div>
-    <nav>
-      <RouterLink to="/">Accueil</RouterLink>
-      <RouterLink to="/">Explorer</RouterLink>
-      <RouterLink to="/">Notes</RouterLink>
-      <RouterLink to="/">Communeauté</RouterLink>
-    </nav>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-  </header>
-
-  <RouterView />
+  <AllPageHeader v-model="searchText"> Yahallo ! </AllPageHeader>
+  <main>
+    <section class="carroussel">a</section>
+    <section class="description">b</section>
+    <section class="other-links">c</section>
+  </main>
+  <footer>
+    <p>footer</p>
+  </footer>
 </template>
 
 <style scoped>
-header {
-  display: flex;
-  line-height: 1.5;
-  max-height: 100vh;
-  gap: 2em;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-div {
+main {
+  background-color: rosybrown;
   flex-grow: 1;
-  align-self: center;
-  height: 2em;
-  border: 2px solid;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-div input {
+section:nth-child(1) {
+  background-color: #ffcd91;
   flex-grow: 1;
-}
-
-nav {
-  flex: 1 1;
   display: flex;
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+section:nth-child(2) {
+  background-color: #ffb55e;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
+section:nth-child(3) {
+  background-color: #ff9e2b;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
